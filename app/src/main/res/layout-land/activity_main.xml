@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/normal_space" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/normal_space" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/normal_space" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/normal_space" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/questionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/bottomLine"
+        app:layout_constraintEnd_toStartOf="@id/endLine"
+        app:layout_constraintStart_toEndOf="@id/startLine"
+        app:layout_constraintTop_toBottomOf="@id/topLine"
+        tools:text="@string/question_australia" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/trueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/normal_space"
+        android:layout_marginEnd="@dimen/normal_space"
+        android:text="@string/true_button"
+        app:layout_constraintEnd_toStartOf="@id/falseButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/startLine"
+        app:layout_constraintTop_toBottomOf="@id/questionTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/falseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/normal_space"
+        android:layout_marginTop="@dimen/normal_space"
+        android:text="@string/false_button"
+        app:layout_constraintEnd_toStartOf="@id/endLine"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/trueButton"
+        app:layout_constraintTop_toBottomOf="@id/questionTextView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cheatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_space"
+        android:text="@string/cheat_button"
+        app:layout_constraintStart_toEndOf="@id/startLine"
+        app:layout_constraintEnd_toStartOf="@id/endLine"
+        app:layout_constraintTop_toBottomOf="@id/falseButton"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_space"
+        android:layout_marginTop="@dimen/normal_space"
+        android:drawableEnd="@drawable/arrow_right"
+        android:src="@drawable/arrow_right"
+        android:contentDescription="@string/next_button"
+        app:layout_constraintEnd_toStartOf="@id/endLine"
+        app:layout_constraintBottom_toTopOf="@id/bottomLine" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_space"
+        android:layout_marginEnd="@dimen/normal_space"
+        android:drawableStart="@drawable/arrow_left"
+        android:src="@drawable/arrow_left"
+        android:contentDescription="@string/back_button"
+        app:layout_constraintStart_toEndOf="@id/startLine"
+        app:layout_constraintBottom_toTopOf="@id/bottomLine" />
+</androidx.constraintlayout.widget.ConstraintLayout>
